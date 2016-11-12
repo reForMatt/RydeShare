@@ -3,7 +3,7 @@
 
 	<head>
 		<meta charset="utf-8"/>
-		<title>Learn AngularJS - Instant Search</title>
+		<title>RydeShare</title>
 
 		<link href="http://fonts.googleapis.com/css?family=Cookie|Open+Sans:400,700" rel="stylesheet" />
 		<!-- Latest compiled and minified CSS -->
@@ -37,10 +37,10 @@
 				 the custom search filter "searchFor". It takes the value of the
 				 searchString model as an argument.
 			 -->
-			<li ng-repeat="i in items | searchFor:searchFrom:searchTo:searchDate">
+			<li ng-repeat="i in items | searchFor: searchFrom:searchTo:searchDate">
 				<div class="row">
 					<div class="col-xs-4">
-						<a href="{{i.url}}"><img ng-src="{{i.image}}" /></a>
+						<a href="{{i.url}}"><img ng-src="{{i.image}}"></a>
 					</div>
 					<div class="col-xs-8">
 						<p class="alignleft">From: {{i.from}}</p>

@@ -18,31 +18,29 @@ app.filter('searchFor', function(){
 		var result = [];
 
 		searchFrom = searchFrom.toLowerCase();
-		searchTo = searchTo.toLowerCase();
 
 		// Using the forEach helper method to loop through the array
 		angular.forEach(arr, function(item){
 
-			bool flag = true;
-
+			var flag = true;
 			if (searchFrom) {
-				if(item.from.toLowerCase().indexOf(searchFrom) === -1){
+				if (item.from.toLowerCase().indexOf(searchFrom) === -1){
 					flag = false;
 				}
 			}
 			if (searchTo) {
-				if(item.to.toLowerCase().indexOf(searchTo) === -1){
+				if (item.from.toLowerCase().indexOf(searchTo) === -1){
 					flag = false;
 				}
 			}
 			if (searchDate) {
-				if (item.date.toLowerCase().indexOf(searchDate) === -1){
+				if (item.from.indexOf(searchDate) === -1){
 					flag = false;
 				}
 			}
 
-			if (flag === true) {
-				result.push(item)
+			if (flag) {
+				result.push(item);
 			}
 		});
 
