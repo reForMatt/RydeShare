@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8"/>
+		<title>Learn AngularJS - Instant Search</title>
+
+		<link href="http://fonts.googleapis.com/css?family=Cookie|Open+Sans:400,700" rel="stylesheet" />
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<!-- The main CSS file -->
+		<link href="style.css" rel="stylesheet" />
+
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+
+	<!-- Initialize a new AngularJS app and associate it with a module named "instantSearch"-->
+	<body ng-app="instantSearch" ng-controller="InstantSearchController">
+
+		<div class="bar">
+			<!-- Create a binding between the searchString model and the text field -->
+			<input type="text" ng-model="searchFrom" placeholder="Enter your starting point" />
+			<input type"text" ng-model="searchTo" placeholder="Enter your destination"/>
+			<input type"text" ng-model="searchDate" placeholder="Enter your date mm/dd/yy"/>
+		</div>
+
+		<ul>
+			<!-- Render a li element for every entry in the items array. Notice
+				 the custom search filter "searchFor". It takes the value of the
+				 searchString model as an argument.
+			 -->
+			<li ng-repeat="i in items | searchFor:searchFrom:searchTo:searchDate">
+				<div class="row">
+					<div class="col-xs-4">
+						<a href="{{i.url}}"><img ng-src="{{i.image}}" /></a>
+					</div>
+					<div class="col-xs-8">
+						<p class="alignleft">From: {{i.from}}</p>
+						<p class="alignright">Pickup: {{i.pickup}}</p>
+						<div style="clear: both;"></div>
+						<p class="alignleft">To: {{i.to}}</p>
+						<p class="alignright">Dropoff: {{i.dropoff}}</p>
+						<div style="clear: both;"></div>
+					</div>
+				</div>
+			</li>
+		</ul>
+
+		<!-- Include AngularJS from Google's CDN -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>
