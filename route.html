@@ -1,1 +1,26 @@
-<p>Test</p>
+<ul class="scrollable">
+  <!-- Render a li element for every entry in the items array. Notice
+     the custom search filter "searchFor". It takes the value of the
+     searchString model as an argument.
+   -->
+  <li ng-repeat="i in items | searchFor: searchFrom:searchTo:searchDate">
+    <div class="row">
+      <div class="col-xs-4">
+        <img ng-src="{{i.image}}">
+      </div>
+      <div class="col-xs-8">
+        <p class="alignleft">From: {{i.from}}</p>
+        <p class="alignright">Pickup: {{i.pickup}}</p>
+        <div style="clear: both;"></div>
+        <p class="alignleft">To: {{i.to}}</p>
+        <p class="alignright">Dropoff: {{i.dropoff}}</p>
+        <div style="clear: both;"></div>
+        <p class="alignleft">{{i.date}} at {{i.time}}</p>
+        <p class="alignright">Price: ${{i.price}}</p>
+        <div style="clear: both;"></div>
+        <p class="alignleft">{{i.driver}}</p>
+        <button class="btn btn-info btn-lg alignright" ng-click="go('/home')">Share a ride</button>
+      </div>
+    </div>
+  </li>
+</ul>
