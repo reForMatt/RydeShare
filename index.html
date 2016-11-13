@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html id="module2">
 	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lobster" />
 	<head>
 		<meta charset="utf-8"/>
@@ -16,7 +16,8 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<!-- The main CSS file -->
 		<link href="style.css" rel="stylesheet" />
-
+		<script src="https://code.angularjs.org/1.2.30/angular.min.js"></script>
+		<script src="https://code.angularjs.org/1.2.30/angular-route.min.js"></script>
 		<script type="text/javascript" src="https://js.squareup.com/v2/paymentform"></script>
 
 
@@ -26,7 +27,7 @@
 	</head>
 
 	<!-- Initialize a new AngularJS app and associate it with a module named "instantSearch"-->
-	<body ng-app="instantSearch" ng-controller="InstantSearchController">
+	<body np-app"instantSearch" ng-controller="InstantSearchController">
 		<header id="head">
 				<div class="header-content">
 						<div class="header-content-inner">
@@ -42,6 +43,7 @@
 			<input type"text" ng-model="searchTo" placeholder="Enter your destination"/>
 			<input type"text" ng-model="searchDate" placeholder="Enter your date mm/dd/yy"/>
 		</div>
+		<ng-view ></ng-view>
 		<ul class="scrollable">
 			<!-- Render a li element for every entry in the items array. Notice
 				 the custom search filter "searchFor". It takes the value of the
@@ -69,7 +71,7 @@
 			</li>
 		</ul>
 		<!-- Include AngularJS from Google's CDN -->
-		<script src="https://code.angularjs.org/1.2.30/angular.min.js"></script>
+		<script src="js/route.js"></script>
 		<script src="js/script.js"></script>
 		<script src="js/square.js"></script>
 	</body>

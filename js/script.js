@@ -188,6 +188,6 @@ function InstantSearchController($scope){
 			image: 'http://www.tutorialspoint.com/android/images/android-mini-logo.jpg'
 		}
 	];
-
-
 }
+
+angular.bootstrap(document.getElementById("module1"), ['instantSearch']);
