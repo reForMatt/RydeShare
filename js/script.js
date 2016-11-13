@@ -26,17 +26,17 @@ app.filter('searchFor', function(){
 
 			var flag = true;
 			if (searchFrom) {
-				if (!(item.from.toLowerCase().indexOf(searchFrom) !== -1)){
+				if ((item.from.toLowerCase().indexOf(searchFrom) === -1)){
 					flag = false;
 				}
 			}
 			if (searchTo) {
-				if (!(item.to.toLowerCase().indexOf(searchTo) !== -1)){
+				if ((item.to.toLowerCase().indexOf(searchTo) === -1)){
 					flag = false;
 				}
 			}
 			if (searchDate) {
-				if (!(item.date.indexOf(searchDate) !== -1)){
+				if ((item.date.indexOf(searchDate) === -1)){
 					flag = false;
 				}
 			}
