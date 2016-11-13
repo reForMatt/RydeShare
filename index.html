@@ -17,6 +17,9 @@
 		<!-- The main CSS file -->
 		<link href="style.css" rel="stylesheet" />
 
+		<script type="text/javascript" src="https://js.squareup.com/v2/paymentform"></script>
+
+
 		<!--[if lt IE 9]>
 			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
@@ -25,13 +28,21 @@
 	<!-- Initialize a new AngularJS app and associate it with a module named "instantSearch"-->
 	<body ng-app="instantSearch" ng-controller="InstantSearchController">
 
-		<div class="bar">
+		<header>
+				<div class="header-content">
+						<div class="header-content-inner">
+								<h1 id="homeHeading">RydeShare</h1>
+								<p>Driving to and from home and college? Share a ride and save some money!</p>
+						</div>
+				</div>
+		</header>
+
+		<div id="search" class="bar">
 			<!-- Create a binding between the searchString model and the text field -->
 			<input type="text" ng-model="searchFrom" placeholder="Enter your starting point" />
 			<input type"text" ng-model="searchTo" placeholder="Enter your destination"/>
 			<input type"text" ng-model="searchDate" placeholder="Enter your date mm/dd/yy"/>
 		</div>
-
 		<ul>
 			<!-- Render a li element for every entry in the items array. Notice
 				 the custom search filter "searchFor". It takes the value of the
@@ -49,6 +60,11 @@
 						<p class="alignleft">To: {{i.to}}</p>
 						<p class="alignright">Dropoff: {{i.dropoff}}</p>
 						<div style="clear: both;"></div>
+						<p class="alignleft">{{i.date}} at {{i.time}}</p>
+						<p class="alignright">${{i.price}}</p>
+						<div style="clear: both;"></div>
+						<p class="alignleft">{{i.driver}}</p>
+						<button window.location = "my_relative_link.html" class="alignright">Share a ride</button>
 					</div>
 				</div>
 			</li>
@@ -56,6 +72,7 @@
 
 		<!-- Include AngularJS from Google's CDN -->
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-		<script src="script.js"></script>
+		<script src="js/script.js"></script>
+		<script src="js/square.js"></script>
 	</body>
 </html>
